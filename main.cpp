@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
  
-    long long scale=1;
+    long long scale=5;
     int out1[24],out2[24];
     int in[24];
     int T=10;

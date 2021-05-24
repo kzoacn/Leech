@@ -86,7 +86,7 @@ class Leech:
 T=10
 while T>0:
     x=numpy.array([int(x) for x in input().split()])
-    for t in Leech.decode(x,1):
+    for t in Leech.decode(x,5):
         sys.stdout.write(str(t)+' ')
     sys.stdout.write('\n')
     T-=1
