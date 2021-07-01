@@ -49,6 +49,9 @@ void rand_bound(double *b){
     cout<<"bound dis to zero "<<l<<endl;
     if(l>4*sqrt(2))
         exit(0);
+    
+    l-=0.1;
+
     for(int i=0;i<n;i++)
         b[i]=v[i]*l;
 }
@@ -71,6 +74,39 @@ while(T--){
         double p[n];
         for(int j=0;j<n;j++)
             p[j]=u[j]*1.0*i/L+v[j]*(1-1.0*i/L);
+
+        
+        decode_Leech(out,p);
+        
+        int zero=1;
+        for(int j=0;j<n;j++)if(out[j])
+            zero=0;
+
+
+        if(zero){
+            puts("yes");
+        }else{
+            puts("no");
+            exit(0);
+        }
+    }
+}
+
+// symmtric
+while(T--){
+    cerr<<T<<endl;
+    double u[n],v[n];
+    int out[n]; 
+    rand_bound(u);
+    rand_bound(v);
+
+
+    int L=10;
+    for(int i=0;i<=1;i++){
+
+        double p[n];
+        for(int j=0;j<n;j++)
+            p[j]=-u[j];
 
         
         decode_Leech(out,p);
